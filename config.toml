@@ -1,0 +1,4 @@
+#baseURL = "https://beepvoice.app"
+baseURL = "https://beepvoice.app/"
+languageCode = "en"
+title = "Beep"

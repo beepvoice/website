@@ -1,0 +1,103 @@
+
+// BASE
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+// UNITS
+
+html {
+	font-size: 16px;
+}
+
+// ELEVATION
+
+:root {
+	--elevation-color: rgba(0, 0, 0, 0.333);
+	--elevation-color-on-dark: rgba(0, 0, 0, 0.5);
+	@for $elevation from 1 to 24 {
+		--elevation-#{$elevation}: #{$elevation/16/2}rem #{$elevation/16/2}rem #{$elevation/16*2}rem var(--elevation-color);
+		--elevation-#{$elevation}-on-dark: #{$elevation/16/2}rem #{$elevation/16/2}rem #{$elevation/16*2}rem var(--elevation-color-on-dark);
+	}
+}
+
+// COLOR
+
+$color-deep-blue: #364dfc;
+$color-cyan-blue: #27d8ed;
+
+$color-mute: mix($color-deep-blue, $color-cyan-blue, 15%);
+$color-chill: mix($color-deep-blue, $color-cyan-blue, 50%);
+$color-bold: mix($color-deep-blue, $color-cyan-blue, 75%);
+
+$color-primary: $color-bold;
+$color-secondary: $color-mute;
+$color-middle: $color-chill;
+
+$color-highlight: transparentize($color-chill, 0.25);
+
+$color-text: mix($color-chill, #002, 33.3%);
+
+:root {
+	// theme
+	--color-gradient-primary: #{$color-primary};
+	--color-gradient-secondary: #{$color-secondary};
+	--color-primary: #{$color-primary};
+	--color-secondary: #{$color-secondary};
+	--color-middle: #{$color-middle};
+	// interactions
+	--color-highlight: #{$color-highlight};
+	// text
+	--color-text: #{$color-text};
+	--color-text-bold: #{$color-primary};
+}
+
+// GRADIENTS
+
+:root {
+	--gradient-linear: linear-gradient(120deg, var(--color-gradient-secondary) 20%, var(--color-gradient-primary) 80%);
+	--gradient-linear-background: linear-gradient(180deg, var(--color-gradient-secondary) 0%, var(--color-gradient-primary) 100%);
+	--gradient-linear-background-reverse: linear-gradient(0deg, var(--color-gradient-secondary) 0%, var(--color-gradient-primary) 100%);
+	--gradient-radial: radial-gradient(circle at right bottom, var(--color-gradient-secondary) 0%, var(--color-gradient-primary) 100%);
+	--gradient-radial-text: radial-gradient(ellipse at 90% 100%, var(--color-gradient-secondary) 16.66%, var(--color-gradient-primary) 83.33%);
+	--gradient-radial-reverse: radial-gradient(circle at left top, var(--color-gradient-secondary) 0%, var(--color-gradient-primary) 100%);
+}
+
+// TYPOGRAPHY
+
+body {
+	line-height: 1.2;
+	font-family: 'Inter UI';
+	color: var(--color-text);
+}
+
+// RADIUS
+
+:root {
+	--radius-cut: 1.5rem;
+	--radius-dialog: 0.5rem;
+}
+
+// PADDING
+
+:root {
+	@for $padding from 1 to 48 {
+		--padding-#{$padding}: #{$padding/16}rem;
+	}
+}
+
+// SIZES
+
+:root {
+	--safe-top: 0px;
+	--size-appbar: 3.5rem;
+	--safe-bottom: 0px;
+	--size-controls: 3.5rem;
+}
+
+// TODO: better solution
+
+input, textarea, button, a {
+	outline: none;
+}

@@ -1,0 +1,14 @@
+.badbrowser {
+	display: none;
+	padding: 1.5rem;
+	background: #ffe0db;
+	color: #661104;
+}
+
+.no-customproperties,
+.no-cssgrid,
+.no-backgroundcliptext {
+	.badbrowser {
+		display: block;
+	}
+}

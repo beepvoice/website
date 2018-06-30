@@ -1,0 +1,16 @@
+.frame {
+	padding: 2rem;
+	margin: 0 auto;
+	max-width: 64rem + 6rem * 2;
+
+	@media screen and (min-width: 60rem) {
+		padding-left: 6rem;
+		padding-right: 6rem;
+	}
+	
+	@media screen and (max-width: 40rem) {
+		padding: 1.5rem;
+		padding: 1.5rem;
+	}
+}
+

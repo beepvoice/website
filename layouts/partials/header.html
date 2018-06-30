@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="referrer" content="no-referrer-when-downgrade">
+
+	<title>
+		{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+		{{ if eq $url "/" }}
+			{{ .Site.Title }}
+		{{ else }}
+			{{ .Title }}
+		{{ end }}
+	</title>
+
+	<link rel="canonical" href="{{ .Permalink }}">
+
+	{{ partial "resources.html" . }}
+</head>
+<body>
+
+	{{ partial "badbrowser.html" . }}
+

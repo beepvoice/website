@@ -1,0 +1,115 @@
+.navbar-wrapper {
+	background: #fff;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+
+	&.shadow {
+		box-shadow: var(--elevation-4);
+	}
+	transition: 0.5s box-shadow;
+}
+
+.navbar {
+	@extend .frame;
+
+	display: flex;
+	align-items: center;
+	
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.brand {
+		flex-grow: 1;
+		font-size: 0;
+		
+		img {
+			height: 2rem;
+		}
+	}
+
+	.menu {
+		display: none;
+
+		@media screen and (max-width: 40rem) {
+			display: block;
+			appearance: none;
+			color: $color-primary;
+			font-size: 2rem;
+
+			&::before {
+				content: "menu";
+			}
+
+			&:checked::before {
+				content: "close";
+			}
+
+			&:checked + .links {
+				display: block;
+			}
+		}
+	}
+
+	.brand, .menu { // mobile
+		position: relative;
+		z-index: 10;
+	}
+
+	.links {
+		font-weight: 700;
+		color: $color-primary;
+
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 40rem) {
+			flex-direction: column;
+			align-items: stretch;
+
+			display: none;
+
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			left: 0;
+			width: 100%;
+
+			padding-top: 6rem;
+
+			background: #fff;
+			font-size: 1.5em;
+			box-shadow: var(--elevation-8);
+		}
+	}
+	
+	.link {
+		margin-left: 1.5rem;
+		
+		@media screen and (max-width: 40rem) {
+			margin-bottom: 1.5rem;
+			margin-left: 1.5rem;
+			margin-right: 1.5rem;
+		}
+	}
+
+	.button {
+		background: $color-primary;
+		color: #fff;
+		line-height: 1;
+
+		@media screen and (max-width: 40rem) {
+			text-align: center;
+			font-size: 1.25rem;
+			padding-top: 0.75rem;
+			padding-bottom: 0.75rem;
+		}
+
+		padding: 0.5rem 1.5rem;
+		border-radius: 2rem;
+	}
+
+}
+

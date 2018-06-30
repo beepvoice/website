@@ -1,0 +1,9 @@
+{
+	"options": ["setClasses"],
+	"feature-detects": [
+		"css/customproperties",
+		"test/css/cssgrid",
+		"test/css/backgroundcliptext",
+		"dom/passiveeventlisteners"
+	]
+}

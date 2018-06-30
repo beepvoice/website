@@ -1,0 +1,55 @@
+.navfooter {
+	@extend .frame;
+
+	display: flex;
+	align-items: flex-start;
+	
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.icon {
+		margin-right: 2rem;
+		@media screen and (min-width: 60rem) {
+			margin-right: 3rem;
+		}
+		
+		img {
+			height: 4rem;
+			@media screen and (max-width: 40rem) {
+				height: 3rem;
+			}
+			border-radius: 0.75 * 33.3%;
+			box-shadow: var(--elevation-4);
+		}
+	}
+
+	.groups {
+		flex-grow: 1;
+		display: grid;
+		grid-template-columns: 50% 50%;
+		@media screen and (min-width: 60rem) {
+			grid-template-columns: 25% 25% 25% 25%;
+		}
+		@media screen and (max-width: 40rem) {
+			grid-template-columns: 100%;
+		}
+	}
+
+	.group {
+		//margin-right: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.title {
+		font-weight: 700;
+		color: $color-primary;
+	}
+
+	.title,
+	.link {
+		margin-bottom: 0.25rem;
+	}
+}
+
