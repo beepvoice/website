@@ -53,16 +53,17 @@
 		-webkit-background-clip: text;
 		color: transparent;
 
-		font-size: 3rem;
-		@media screen and (max-width: 50rem) {
-			font-size: 2rem;
+		@media screen and (min-width: 50rem) {
+			font-size: 3rem;
 		}
 	}
 
 	.picture {
+		flex: 1;
+
 		padding-left: 1rem;
-		padding-right: 6rem;
-		@media screen and (max-width: 50rem) {
+		@media screen and (max-width: 60rem) {
+			flex: 0;
 			padding-right: 2rem;
 		}
 		@media screen and (max-width: 40rem) {
@@ -76,6 +77,33 @@
 		box-shadow: var(--elevation-8);
 		border-radius: 1rem;
 		width: 15rem;
+	}
+
+}
+
+
+.features {
+	@extend .frame;
+
+	display: flex;
+	@media screen and (max-width: 40rem) {
+		flex-direction: column-reverse;
+	}
+
+	.grow {
+		flex: 1;
+	}
+
+	.material-icons {
+		font-size: 10rem;
+		@media screen and (max-width: 40rem) {
+			font-size: 6rem;
+		}
+		
+		background: var(--gradient-radial-text);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
 	}
 
 }
