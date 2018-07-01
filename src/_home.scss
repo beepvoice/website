@@ -79,3 +79,50 @@
 	}
 
 }
+
+
+.getnotified-wrapper {
+
+	background: var(--gradient-linear-background);
+
+}
+
+.getnotified {
+	@extend .frame;
+	
+	max-width: 60rem;
+	color: #fff;
+
+	form {
+		border-radius: 0.5rem;
+		box-shadow: var(--elevation-4);
+		overflow: hidden;
+
+		display: flex;
+
+		font-size: 1.5rem;
+		@media screen and (max-width: 40rem) {
+			font-size: 1rem;
+		}
+	}
+
+	input[type=email] {
+		flex: 1;
+		min-width: 0;
+		border: none;
+
+		padding: 0.5em 1em;
+		color: var(--color-text);
+	}
+
+	button[type=submit] {
+		cursor: pointer;
+		border: none;
+
+		padding: 0.125em 0.5em;
+		color: var(--color-primary);
+		background: #fff;
+		font-size: 2em;
+	}
+
+}

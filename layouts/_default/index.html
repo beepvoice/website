@@ -1,9 +1,68 @@
 {{ partial "header.html" . }}
 
-{{ partial "navigation.html" . }}
+	<div class="navbar-wrapper">
+		<nav class="navbar">
+			<div class="brand">
+				<a href="{{ "/" | relURL }}">
+					<img src="{{ "/images/logo.svg" | relURL }}">
+				</a>
+			</div>
+			<input type="checkbox" class="menu material-icons">
+			<div class="links">
+				<a href="{{ "/#features" | relURL }}">
+					<div class="link">Features</div>
+				</a>
+				<a href="{{ "/company" | relURL }}">
+					<div class="link">Company</div>
+				</a>
+				<a href="{{ "/#getnotified" | relURL }}">
+					<div class="link button">Get notified</div>
+				</a>
+			</div>
+		</nav>
+	</div>
 
-{{ .Content }}
+	{{ .Content }}
 
-{{ partial "navigation-footer.html" . }}
+	<nav class="navfooter">
+		<div class="icon">
+			<img src="{{ "/images/appicon.svg" | relURL }}">
+		</div>
+		<div class="groups">
+			<div class="group">
+				<a href="{{ "/" | relURL }}">
+					<div class="link">Home</div>
+				</a>
+				<a href="{{ "/#features" | relURL }}">
+					<div class="link">Features</div>
+				</a>
+				<a href="{{ "/#getnotified" | relURL }}">
+					<div class="link">Get notified</div>
+				</a>
+			</div>
+			<div class="group">
+				<div class="title">
+					Social
+				</div>
+				<a href="{{ "https://twitter.com/beepvoice" | relURL }}">
+					<div class="link">Twitter</div>
+				</a>
+				<a href="{{ "https://instagram.com/beepvoice" | relURL }}">
+					<div class="link">Instagram</div>
+				</a>
+				<a href="{{ "/contact" | relURL }}">
+					<div class="link">Contact us</div>
+				</a>
+			</div>
+			<div class="group">
+				<div class="title">
+					Company
+				</div>
+				<a href="{{ "/company" | relURL }}">
+					<div class="link">About us</div>
+				</a>
+			</div>
+		</div>
+	</nav>
 
 {{ partial "footer.html" . }}
