@@ -5,3 +5,32 @@
 .company-hero {
 	@extend .frame;
 }
+
+.company-jobs-wrapper {
+	
+	background: var(--gradient-linear-background);
+
+	padding-top: 1.5rem;
+
+}
+
+.company-jobs {
+	@extend .frame;
+
+	text-align: center;
+	color: #fff;
+	font-size: 1.5em;
+	
+	.btn {
+		display: inline-block;
+
+		padding: 0.5em;
+		border-radius: 0.5rem;
+		box-shadow: var(--elevation-4);
+		overflow: hidden;
+
+		color: var(--color-primary);
+		background-color: #fff;
+	}
+
+}

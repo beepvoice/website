@@ -3,14 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="referrer" content="no-referrer-when-downgrade">
+
+	{{ if .Description }}
+	<meta name="description" content="{{ .Description }}">
+	{{ end }}
+	<link rel="icon" type="image/png" href="{{ "/images/icon.png" | relURL }}">
 
 	<title>
-		{{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+		{{ $url := replace .Permalink .Site.BaseURL "" }}
 		{{ if eq $url "/" }}
-			{{ .Site.Title }}
+			{{ .Site.Title }} - {{ .Site.Params.Subtitle }}
 		{{ else }}
-			{{ .Title }}
+			{{ .Site.Title }} - {{ .Title }}
 		{{ end }}
 	</title>
 

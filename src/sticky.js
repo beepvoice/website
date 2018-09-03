@@ -2,6 +2,9 @@
 
 function configureScroll() {
 	const navbarWrapper = document.querySelector('.navbar-wrapper');
+	if (!navbarWrapper) {
+		setTimeout(tryConfigureScroll, 100);
+	}
 
 	window.addEventListener('scroll', () => {
 		if (document.scrollingElement.scrollTop > 0) {

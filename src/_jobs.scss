@@ -1,0 +1,43 @@
+.jobs-hero-wrapper {
+	
+	background: var(--gradient-linear-background);
+
+	padding-top: 1.5rem;
+
+}
+
+.jobs-hero {
+	@extend .frame;
+
+	text-align: center;
+	color: #fff;
+	font-size: 1.5em;
+	
+}
+
+.jobs-why {
+	@extend .frame;
+
+}
+
+.jobs-why-box {
+
+	margin: 0 auto;
+	max-width: 48rem;
+
+	padding: 1rem 2.5rem;
+	background: #fff;
+	box-shadow: var(--elevation-4);
+	border-radius: 0.5rem;
+
+}
+
+
+.job {
+	@extend .frame;
+
+	& > ul > li {
+		margin: 0.75em 0;
+	}
+
+}
