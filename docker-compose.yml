@@ -10,6 +10,8 @@ services:
   website:
     image: registry.makerforce.io/beep/website:latest
     restart: unless-stopped
+    networks:
+      - http
     labels:
       - traefik.enable=true
       - traefik.frontend.rule=Host:beepvoice.app
@@ -21,7 +23,9 @@ services:
     command: -file /data/notify.csv -slack https://hooks.slack.com/services/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
     volumes:
       - ../lists:/data
+    networks:
+      - http
     labels:
       - traefik.enable=true
       - traefik.frontend.rule=Host:beepvoice.app;Path:/subscribe
-      - traefik.port=80
+      - traefik.port=8080
