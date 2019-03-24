@@ -28,6 +28,9 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
+    when:
+      branch:
+        - master
 ---
 kind: pipeline
 name: deploy
@@ -44,6 +47,9 @@ steps:
       source:
         - docker-compose.yml
       target: /home/core/website
+    when:
+      branch:
+        - master
   - name: docker-compose-up
     image: appleboy/drone-ssh
     settings:
@@ -56,6 +62,9 @@ steps:
           cd /home/core/website && /home/core/docker-compose pull
         - >-
           cd /home/core/website && /home/core/docker-compose up -d
+    when:
+      branch:
+        - master
   - name: slack
     image: plugins/slack
     settings:
