@@ -2,4 +2,4 @@ baseURL = "https://beepvoice.app"
 languageCode = "en"
 title = "Beep"
 [params]
-	subtitle = "Talk. Don’t text"
+  subtitle = "Talk. Don’t text"

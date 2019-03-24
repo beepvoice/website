@@ -1,0 +1,27 @@
+version: "3.7"
+
+networks:
+  http:
+    external:
+      name: http
+
+services:
+
+  website:
+    image: registry.makerforce.io/beep/website:latest
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:beepvoice.app
+      - traefik.port=80
+
+  website-email:
+    image: productionwentdown/email-collector:1.0.1
+    restart: unless-stopped
+    command: -file /data/notify.csv -slack https://hooks.slack.com/services/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
+    volumes:
+      - ../lists:/data
+    labels:
+      - traefik.enable=true
+      - traefik.frontend.rule=Host:beepvoice.app;Path:/subscribe
+      - traefik.port=80

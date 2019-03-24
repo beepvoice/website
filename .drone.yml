@@ -1,0 +1,45 @@
+kind: pipeline
+name: website
+clone:
+  depth: 1
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      registry: registry.makerforce.io
+      repo: registry.makerforce.io/beep/website
+      auto_tag: true
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+---
+kind: pipeline
+name: deploy
+clone:
+  depth: 1
+steps:
+  - name: copy-docker-compose
+    image: appleboy/drone-scp
+    settings:
+      host: staging.beepvoice.app
+      username: core
+      ssh_key:
+        from_secret: ssh_key
+      source:
+        - docker-compose.yml
+      target: /home/core/website
+  - name: docker-compose-up
+    image: appleboy/drone-ssh
+    settings:
+      host: staging.beepvoice.app
+      username: core
+      ssh_key:
+        from_secret: ssh_key
+      script:
+        - >-
+          cd /home/core/website && /home/core/docker-compose pull
+        - >-
+          cd /home/core/website && /home/core/docker-compose up -d
+depends_on:
+  - website
