@@ -56,5 +56,10 @@ steps:
           cd /home/core/website && /home/core/docker-compose pull
         - >-
           cd /home/core/website && /home/core/docker-compose up -d
+  - name: slack
+    image: plugins/slack
+    settings:
+      webhook:
+        from_secret: slack_webhook_beep
 depends_on:
   - website
