@@ -1,4 +1,19 @@
 kind: pipeline
+name: ssh-test
+clone:
+  depth: 1
+steps:
+  - name: ssh
+    image: appleboy/drone-ssh
+    settings:
+      host: staging.beepvoice.app
+      username: core
+      key:
+        from_secret: ssh_key
+      script:
+        - cd /home/core/website && ls
+---
+kind: pipeline
 name: website
 clone:
   depth: 1
@@ -24,7 +39,7 @@ steps:
     settings:
       host: staging.beepvoice.app
       username: core
-      ssh_key:
+      key:
         from_secret: ssh_key
       source:
         - docker-compose.yml
@@ -34,7 +49,7 @@ steps:
     settings:
       host: staging.beepvoice.app
       username: core
-      ssh_key:
+      key:
         from_secret: ssh_key
       script:
         - >-
