@@ -20,9 +20,9 @@
     "grunt-postcss": "^0.9.0",
     "grunt-sass": "^3.0.0",
     "grunt-svgmin": "^5.0.0",
+    "modernizr": "github:Modernizr/Modernizr#e05f001cc78be58b3b126aed9878f74222127479",
     "node-sass": "^4.9.0",
     "normalize.css": "^8.0.0",
-    "modernizr": "github:Modernizr/Modernizr#e05f001cc78be58b3b126aed9878f74222127479",
     "sass-lint": "^1.12.1"
   }
 }
