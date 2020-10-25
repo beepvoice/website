@@ -1,6 +1,6 @@
 {
   "name": "beep-website",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "build": "modernizr -c .modernizr.json -d static/modernizr.js && grunt",
     "lint": "eslint --fix src/**/*.js && sass-lint src/**/*.scss",
@@ -9,20 +9,20 @@
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.51",
-    "autoprefixer": "^8.6.4",
-    "eslint": "^5.0.1",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0",
-    "grunt": "^1.0.3",
-    "grunt-babel": "^8.0.0-beta.0",
-    "grunt-cli": "^1.2.0",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "grunt": "^1.3.0",
+    "grunt-babel": "^8.0.0",
+    "grunt-cli": "^1.3.2",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^3.0.0",
-    "grunt-svgmin": "^5.0.0",
+    "grunt-sass": "^3.1.0",
+    "grunt-svgmin": "^6.0.1",
     "modernizr": "github:Modernizr/Modernizr#e05f001cc78be58b3b126aed9878f74222127479",
-    "node-sass": "^4.9.0",
-    "normalize.css": "^8.0.0",
-    "sass-lint": "^1.12.1"
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0.1",
+    "sass-lint": "^1.13.1"
   }
 }
