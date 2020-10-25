@@ -28,7 +28,7 @@ module.exports = function init(grunt) {
 			options: {
 				map: true,
 				processors: [
-					autoprefixer({ browsers: 'last 1 version, not dead, >1% in SG' }),
+					autoprefixer(),
 				],
 			},
 			dist: {
@@ -83,7 +83,7 @@ module.exports = function init(grunt) {
 
 	// CSS
 	grunt.loadNpmTasks('grunt-sass');
-	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('@lodder/grunt-postcss');
 	// SVG
 	grunt.loadNpmTasks('grunt-svgmin');
 	// JS
