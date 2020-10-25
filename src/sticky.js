@@ -1,5 +1,15 @@
 /* eslint-env browser */
 
+function isStuck(ele) {
+	if (document.scrollingElement.scrollTop <= 10) {
+		return false;
+	}
+	if (document.scrollingElement.scrollTop != ele.offsetTop) {
+		return false;
+	}
+	return true;
+}
+
 function configureScroll() {
 	const navbarWrapper = document.querySelector('.navbar-wrapper');
 	if (!navbarWrapper) {
@@ -7,7 +17,7 @@ function configureScroll() {
 	}
 
 	window.addEventListener('scroll', () => {
-		if (document.scrollingElement.scrollTop > 0) {
+		if (isStuck(navbarWrapper)) {
 			if (!navbarWrapper.classList.contains('shadow')) {
 				navbarWrapper.classList.add('shadow');
 			}
